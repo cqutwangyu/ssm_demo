@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wy.demo.mapper.UserMapper">
+    <insert id="insert" parameterType="com.wy.demo.domain.User">
+        insert into ssm_demo_user (FLOW_ID, NAME, SORT, VERSION_NUMBER)
+        values (#{flowId}, #{name}, #{sort}, #{versionNumber})
+    </insert>
+
+    <select id="selectAll" resultType="com.wy.demo.domain.User">
+        select FLOW_ID, `NAME`, SORT, VERSION_NUMBER
+        from ssm_demo_user
+    </select>
+
+    <select id="selectById" resultType="com.wy.demo.domain.User">
+        select FLOW_ID, `NAME`, SORT, VERSION_NUMBER
+        from ssm_demo_user
+        where FLOW_ID = #{flowId}
+    </select>
+</mapper>
